@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { geistMono, geistSans } from "@/fonts";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
+import { ConvexClientProvider } from "@/components/common/convex-client-provider";
+import { interSans } from "@/fonts";
 import type { LayoutProps } from "@/types/common";
 
 import "./globals.css";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: {
@@ -23,7 +26,14 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+      <body className={`${interSans.variable} font-sans antialiased`}>
+        <NuqsAdapter>
+          <ConvexClientProvider>
+            <Toaster />
+            {children}
+          </ConvexClientProvider>
+        </NuqsAdapter>
+      </body>
     </html>
   );
 }

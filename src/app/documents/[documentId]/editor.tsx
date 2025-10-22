@@ -79,7 +79,7 @@ export function Editor() {
       ImageResize,
       Image,
     ],
-    content: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim assumenda ut fugit aliquam quibusdam. Numquam, corrupti. Perspiciatis itaque, tempore repellendus ex impedit, magni officiis explicabo doloribus nemo, aperiam numquam adipisci.`,
+    content: "",
     // Don't render immediately on the server to avoid SSR issues
     immediatelyRender: false,
   });
